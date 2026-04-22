@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    #d{
+  height :100px;
+  width:100px;
+  border:2px solid black;
+}
+   </style>
+</head>
+<body>
+<h1>TODO TASK</h1>
+<input type="text" class="local">
+<button>add task</button>
+<H3>LIST OF TODO TASK</H3>
+<ul>
+    <li>Eat <button class="delete">Delete</button></li>
+    <li>Sleep <button class="delete">Delete</button> </li>
+     <li>Read<button class="delete">Delete</button> </li>
+      <li>sports <button class="delete">Delete</button> </li>
+      <li>GYM<button class="delete">Delete</button> </li>
+</ul>
+    <script>
+        let btn = document.querySelector("button");
+let ul = document.querySelector("ul");
+let inp = document.querySelector("input");
+
+btn.addEventListener("click",function(){
+    let item = document.createElement("li");
+    item.innerText= inp.value;
+
+    let delbtn = document.createElement("button");
+    delbtn.innerText = "delete";
+    delbtn.classList.add("delete");
+     
+    item.appendChild(delbtn);
+    ul.appendChild(item);
+    inp.value= "";
+
+});
+ul.addEventListener("click",function(event){
+    if(event.target.nodeName=="BUTTON"){
+    let listItem= event.target.parentElement;
+    listItem.remove();
+    console.log("delete");
+    }
+});
+    </script>
+</body>
+</html>
