@@ -14,13 +14,3 @@ public class Half_Pyramid {
 		System.out.println(" "); }
 	}
 }
-
-//OUTPUT
-/*
-Enter the value of n : 4
-*
-**
-***
-****
-[Program finished]
-*/
